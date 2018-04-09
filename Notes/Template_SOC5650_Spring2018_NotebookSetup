@@ -1,0 +1,36 @@
+---
+title: "SOC 5650 Spring 2018 [Assignment] R Notebook"
+author: "Malcolm Townes"
+date: '(`r format(Sys.time(), "%B %d, %Y")`)'
+output: 
+    github_document: default
+    html_notebook: default
+always_allow_html: yes
+---
+
+## Introduction
+This is the R Notebook for [Assignment] in SOC5650 Spring 2018.
+
+## Project Set Up
+The following code enables the R Notebook to integrate seemlessly with the project organization format used in the course. This is normally included in the R Notebook but currently is causing an error. Per Dr. Chris Prener, the error is generated because the `here::here()` function has not been tested with the specific combination of functions that we use in this course (see SOC 5650 Spring 2018 Lecture 03 web page section about `here()` solution.) To work around this problem, I've embedded the `here()` function where I would normally enter a file path of some kind. 
+```{r setup-project}
+knitr::opts_knit$set(root.dir = here::here())
+```
+
+## Load Dependencies
+The following code loads package dependencies required to complete the assignment. Basic tasks include importing, reading, wrangling, and cleaning data; creating new variables; and creating shapefiles. 
+```{r load-dependencies}
+library(tidyverse) # loads the basic R packages
+library(here) # enables file portability
+library(readr) # functions for reading data
+library(dplyr) # functions for data wrangling
+library(janitor) # functions for data cleaning
+library(naniar) # functions for analyzing missing data
+library(sf) # simple features for R
+library(ggplot2) # functions for plotting
+library(ggthemes) # themes, scales, and geoms for ggplot2
+library(measurements) # functions for unit measurements
+library(RColorBrewer) # color ramps
+library(viridis) # color ramps
+library(leaflet) # create web maps
+```
